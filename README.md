@@ -1,3 +1,4 @@
+ReactJs project that consume GitHub API, You can search for people Accounts on GitHub and retriev thier information,repositories,if they are hireble or not and more!
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
