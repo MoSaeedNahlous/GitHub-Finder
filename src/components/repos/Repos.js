@@ -7,10 +7,17 @@ export const Repos = () => {
   const githubContext = useContext(GithubContext);
   return (
     <Fragment>
-      <h2>User's Recent Repos</h2>
-      {githubContext.repos.map((repo) => (
-        <ReposItem repo={repo} key={repo.id} />
-      ))}
+      {/*  */}
+      <h2>User's Recent Repositories</h2>
+      {githubContext.repos.length === 0 ? (
+        <h3 style={{ textAlign: 'center', margin: '3%' }}>
+          This dose not have any repositories at the moment!
+        </h3>
+      ) : (
+        githubContext.repos.map((repo) => (
+          <ReposItem repo={repo} key={repo.id} />
+        ))
+      )}
     </Fragment>
   );
 };

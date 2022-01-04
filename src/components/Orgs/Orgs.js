@@ -8,9 +8,13 @@ export const Orgs = () => {
   return (
     <Fragment>
       <h2>User's Organizations</h2>
-      {githubContext.orgs.map((org) => (
-        <OrgsItem org={org} key={org.id} />
-      ))}
+      {githubContext.orgs.length === 0 ? (
+        <h3 style={{ textAlign: 'center', margin: '3%' }}>
+          This user is not a member of any organizations at the moment!
+        </h3>
+      ) : (
+        githubContext.orgs.map((org) => <OrgsItem org={org} key={org.id} />)
+      )}
     </Fragment>
   );
 };
