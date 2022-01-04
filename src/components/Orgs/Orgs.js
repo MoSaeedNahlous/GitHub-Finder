@@ -1,18 +1,18 @@
 import React, { Fragment, useContext } from 'react';
 
-import ReposItem from './ReposItem.js';
+import OrgsItem from './OrgsItem.js';
 import GithubContext from '../../context/github/githubContext.js';
 
-export const Repos = () => {
+export const Orgs = () => {
   const githubContext = useContext(GithubContext);
   return (
     <Fragment>
-      <h2>User's Recent Repos</h2>
-      {githubContext.repos.map((repo) => (
-        <ReposItem repo={repo} key={repo.id} />
+      <h2>User's Organizations</h2>
+      {githubContext.orgs.map((org) => (
+        <OrgsItem org={org} key={org.id} />
       ))}
     </Fragment>
   );
 };
 
-export default Repos;
+export default Orgs;

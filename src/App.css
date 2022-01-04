@@ -125,6 +125,15 @@ img {
   padding-bottom: 0.3rem;
 }
 
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.row img {
+  margin-right: 20px;
+}
+
 /* Padding */
 .p {
   padding: 0.5rem;
