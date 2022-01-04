@@ -216,6 +216,7 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  transition: 0.5s;
 }
 
 .btn-link {
@@ -365,10 +366,14 @@ table th {
   width: 100%;
   opacity: 0.9;
   margin-bottom: 1rem;
+  transition: 0.5s;
 }
 
 .navbar ul {
   display: flex;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar a {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Navbar from './components/layout/NavBar.js';
 import Home from './components/Pages/Home';
@@ -9,27 +9,30 @@ import About from './components/Pages/About.js';
 import User from './components/users/User.js';
 import GithubState from './context/github/GithubState.js';
 import AlertState from './context/alert/AlertState.js';
+import GlobalContextProvider from './context/theme/ThemeState';
 
 const App = () => {
   return (
-    <GithubState>
-      <AlertState>
-        <Router>
-          <div className='App'>
-            <Navbar />
-            <div className='container'>
-              <Alert />
-              <Switch>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/about' component={About} />
-                <Route exact path='/user/:login' component={User} />
-                <Route component={NotFound} />
-              </Switch>
+    <GlobalContextProvider>
+      <GithubState>
+        <AlertState>
+          <Router>
+            <div className='App'>
+              <Navbar />
+              <div className='container'>
+                <Alert />
+                <Switch>
+                  <Route exact path='/' component={Home} />
+                  <Route exact path='/about' component={About} />
+                  <Route exact path='/user/:login' component={User} />
+                  <Route component={NotFound} />
+                </Switch>
+              </div>
             </div>
-          </div>
-        </Router>
-      </AlertState>
-    </GithubState>
+          </Router>
+        </AlertState>
+      </GithubState>
+    </GlobalContextProvider>
   );
 };
 

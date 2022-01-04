@@ -6,3 +6,5 @@ export const GET_ORGS = 'GET_ORGS';
 export const SET_LOADING = 'SET_LOADING';
 export const SET_ALERT = 'SET_ALERT';
 export const REMOVE_ALERT = 'REMOVE_ALERT';
+
+export const SET_THEME = 'SET_THEME';

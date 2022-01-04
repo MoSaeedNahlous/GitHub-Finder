@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { GlobalContext } from '../../context/theme/ThemeState';
 
 const NavBar = (props) => {
+  const { theme, themeSwitchHandler } = useContext(GlobalContext);
+
+  useEffect(() => {
+    window.localStorage.setItem('theme', theme);
+  }, [theme]);
+
   return (
-    <nav className='navbar bg-primary'>
+    <nav className={theme === 'light' ? 'navbar bg-primary' : 'navbar bg-dark'}>
       <h1>
         <i className={props.iconCode} />
         {props.title}
@@ -15,6 +22,22 @@ const NavBar = (props) => {
         </li>
         <li>
           <Link to='/about'>About</Link>
+        </li>
+        <li>
+          <button
+            className={theme === 'light' ? 'bg-primary ' : 'bg-dark '}
+            style={{
+              border: '0.5px solid #f4f4f4',
+              borderRadius: '5px',
+              padding: '10px',
+              cursor: 'pointer',
+            }}
+            onClick={() =>
+              themeSwitchHandler(theme === 'light' ? 'dark' : 'light')
+            }
+          >
+            Current Theme: {theme}
+          </button>
         </li>
       </ul>
     </nav>
