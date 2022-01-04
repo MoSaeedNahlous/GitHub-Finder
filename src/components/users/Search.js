@@ -1,4 +1,8 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, {
+  useState,
+  useContext,
+  // useEffect
+} from 'react';
 import GithubContext from '../../context/github/githubContext.js';
 import AlertContext from '../../context/alert/AlertContext.js';
 import { GlobalContext } from '../../context/theme/ThemeState.js';
