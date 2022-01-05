@@ -6,9 +6,9 @@ import { GlobalContext } from '../../context/theme/ThemeState';
 const NavBar = (props) => {
   const { theme, themeSwitchHandler } = useContext(GlobalContext);
 
-  useEffect(() => {
-    window.localStorage.setItem('theme', theme);
-  }, [theme]);
+  // useEffect(() => {
+  //   window.localStorage.setItem('theme', theme);
+  // }, [theme]);
 
   return (
     <nav className={theme === 'light' ? 'navbar bg-primary' : 'navbar bg-dark'}>
