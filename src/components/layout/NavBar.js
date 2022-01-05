@@ -5,21 +5,15 @@ import { GlobalContext } from '../../context/theme/ThemeState';
 
 const NavBar = (props) => {
   const { theme, themeSwitchHandler } = useContext(GlobalContext);
-
-  // useEffect(() => {
-  //   window.localStorage.setItem('theme', theme);
-  // }, [theme]);
-
   return (
     <nav className={theme === 'light' ? 'navbar bg-primary' : 'navbar bg-dark'}>
       <h1>
-        <i className={props.iconCode} />
-        {props.title}
+        <Link to='/'>
+          <i className={props.iconCode} />
+          {props.title}
+        </Link>
       </h1>
       <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
         <li>
           <Link to='/about'>About</Link>
         </li>
@@ -45,7 +39,7 @@ const NavBar = (props) => {
 };
 NavBar.defaultProps = {
   title: ' GitHub Finder',
-  iconCode: 'fab fa-github-alt',
+  iconCode: 'fab fa-github',
 };
 
 NavBar.propTypes = {
